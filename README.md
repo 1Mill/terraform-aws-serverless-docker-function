@@ -1,2 +1,2 @@
-# terraform-aws-serverless-docker-function
- 
+# Terraform AWS Serverless Docker Function
+
