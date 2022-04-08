@@ -1,14 +1,17 @@
 variable "docker" {
+	description = "Docker build context."
 	default = {}
 	type = object({
 		build = optional(string)
 	})
 }
 variable "environment" {
+	description = "Environmental variables."
 	default = {}
         type = any
 }
 variable "function" {
+	description = "AWS Lambda configuration."
 	type = object({
 		memory = optional(string)
 		name = string
@@ -17,6 +20,7 @@ variable "function" {
 	})
 }
 variable "registry" {
+	description = "AWS ECR configuration."
 	default = {}
 	type = object({
 		name = optional(string)
