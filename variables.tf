@@ -1,6 +1,5 @@
 variable "docker" {
 	description = "Docker build context."
-	default = {}
 	type = object({
 		build = string
 	})
