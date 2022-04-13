@@ -2,7 +2,7 @@ variable "docker" {
 	description = "Docker build context."
 	default = {}
 	type = object({
-		build = optional(string)
+		build = string
 	})
 }
 variable "environment" {

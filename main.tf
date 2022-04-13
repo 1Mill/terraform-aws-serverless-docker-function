@@ -1,7 +1,4 @@
 locals {
-	docker = defaults(var.docker, {
-		build = abspath(path.module)
-	})
 	function = defaults(var.function, {
 		memory = 128
 		timeout = 3
@@ -33,7 +30,7 @@ module "docker_image" {
 	})
 	image_tag = local.function.version
 	image_tag_mutability = "IMMUTABLE"
-	source_path = local.docker.build
+	source_path = var.docker.build
 }
 
 module "lambda" {
