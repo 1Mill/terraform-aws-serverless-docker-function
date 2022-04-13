@@ -14,7 +14,7 @@
 
 ## Usage
 
-See [examples folder](/examples/) for full working examples.
+See [examples folder](https://github.com/1Mill/terraform-aws-serverless-docker-function/tree/main/examples) for full working examples.
 
 ```hcl
 module "serverless-docker-function" {
