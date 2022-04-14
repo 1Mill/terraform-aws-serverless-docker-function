@@ -19,7 +19,6 @@ See [examples folder](https://github.com/1Mill/terraform-aws-serverless-docker-f
 ```hcl
 module "serverless_docker_function" {
   source  = "1Mill/serverless-docker-function/aws"
-  version = "0.0.3"
 
   docker = { build = abspath(path.module) }
   environment = { NODE_ENV = "production" }
@@ -30,7 +29,6 @@ module "serverless_docker_function" {
 ```hcl
 module "serverless_docker_function" {
   source  = "1Mill/serverless-docker-function/aws"
-  version = "0.0.3"
 
   docker = { build = abspath("absolute/path/to/my/docker/build/context") }
   environment = {
