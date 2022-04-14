@@ -17,7 +17,7 @@
 See [examples folder](https://github.com/1Mill/terraform-aws-serverless-docker-function/tree/main/examples) for full working examples.
 
 ```hcl
-module "serverless-docker-function" {
+module "serverless_docker_function" {
   source  = "1Mill/serverless-docker-function/aws"
   version = "0.0.3"
 
@@ -28,7 +28,7 @@ module "serverless-docker-function" {
 ```
 
 ```hcl
-module "serverless-docker-function" {
+module "serverless_docker_function" {
   source  = "1Mill/serverless-docker-function/aws"
   version = "0.0.3"
 
