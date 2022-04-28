@@ -53,3 +53,4 @@ module "serverless_docker_function" {
 1. Run `docker compose run terraform sh`
 1. Inside the container, run `cd examples/simple-node-lambda`
 1. In the example directory, run `terraform init` and then `terraform apply -auto-approve`
+1. Destroy the resources by running `terraform destroy -auto-approve`
