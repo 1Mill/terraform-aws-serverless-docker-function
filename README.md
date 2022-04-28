@@ -46,3 +46,10 @@ module "serverless_docker_function" {
   }
 }
 ```
+
+## Examples
+
+1. Create `.env` file with your AWS credentials that match those in `docker-compose.yml`
+1. Run `docker compose run terraform sh`
+1. Inside the container, run `cd examples/simple-node-lambda`
+1. In the example directory, run `terraform init` and then `terraform apply -auto-approve`
