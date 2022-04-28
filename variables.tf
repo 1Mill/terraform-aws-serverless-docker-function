@@ -18,6 +18,11 @@ variable "function" {
 		version = optional(string)
 	})
 }
+variable "policy" {
+	default = null
+	description = "JSON formatted AWS Policy"
+	type = string
+}
 variable "registry" {
 	description = "AWS ECR configuration."
 	default = {}

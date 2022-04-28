@@ -44,4 +44,7 @@ module "lambda" {
 	memory_size = local.function.memory
 	package_type = "Image"
 	timeout = local.function.timeout
+
+	attach_policy_json = var.policy != null
+	policy_json = var.policy
 }
