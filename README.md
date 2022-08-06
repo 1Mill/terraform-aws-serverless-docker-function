@@ -5,12 +5,12 @@
 | Name             | Description                                                      | Type   | Default          | Required |
 |------------------|------------------------------------------------------------------|--------|------------------|----------|
 | docker.build     | Absolute path to Dockerfile                                      | string |                  | Yes      |
-| environment      | Environmental variables                                          | object | `{}`             | No       |
-| function.memory  | Memory allocated to AWS Lambda function between 128 to 10,240 MB | string | `128`            | No       |
+| environment      | Environmental variables                                          | object | `{}`             |          |
+| function.memory  | Memory allocated to AWS Lambda function between 128 to 10,240 MB | string | `128`            |          |
 | function.name    | AWS Lambda function name                                         | string |                  | Yes      |
-| function.timeout | AWS Lambda timeout after seconds                                 | string | `3`              | No       |
-| function.version | AWS Lambda docker image version                                  | string | Current Datetime | No       |
-| registry.name    | AWS ECR name                                                     | string | `function.name`  | No       |
+| function.timeout | AWS Lambda timeout after seconds                                 | string | `3`              |          |
+| function.version | AWS Lambda docker image version                                  | string | Current Datetime |          |
+| registry.name    | AWS ECR name                                                     | string | `function.name`  |          |
 
 ## Usage
 
