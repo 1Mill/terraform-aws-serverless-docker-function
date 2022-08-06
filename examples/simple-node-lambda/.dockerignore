@@ -1,8 +1,6 @@
-.dockerignore
 .terraform
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
-dockerfile
 main.tf
 terraform.tfstate
 terraform.tfstate.backup
