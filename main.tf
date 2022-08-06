@@ -8,9 +8,21 @@ locals {
 	})
 }
 
+data "aws_caller_identity" "this" {}
+data "aws_ecr_authorization_token" "token" {}
+data "aws_region" "current" {}
+
+provider "docker" {
+  registry_auth {
+    address  = format("%v.dkr.ecr.%v.amazonaws.com", data.aws_caller_identity.this.account_id, data.aws_region.current.name)
+    password = data.aws_ecr_authorization_token.token.password
+    username = data.aws_ecr_authorization_token.token.user_name
+  }
+}
+
 module "docker_image" {
 	source = "terraform-aws-modules/lambda/aws//modules/docker-build"
-	version = "3.2.0"
+	version = "~> 3.3.1"
 
 	create_ecr_repo = true
 	ecr_repo = local.registry.name
@@ -35,7 +47,7 @@ module "docker_image" {
 
 module "lambda" {
 	source = "terraform-aws-modules/lambda/aws"
-	version = "3.2.0"
+	version = "~> 3.3.1"
 
 	create_package = false
 	environment_variables = var.environment
