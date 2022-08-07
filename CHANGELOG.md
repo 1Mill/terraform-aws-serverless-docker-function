@@ -2,7 +2,7 @@
 
 ## v0.0.6
 
-* Set `hashicorp/aws ~> 4.0, < 4.22` to avoid breaking changes with new `force_delete` argument for AWS ECR instances
+* Set `hashicorp/aws ~> 4.0, < 4.22` to avoid breaking changes with new `force_delete` argument for `aws_ecr_repository` resources
 * Set `kreuzwerker/docker ~> 2.18` to always allow white-list `.dockerignore` pattern enabled with that release
 * Set `terraform ~> 1.0, < 1.3` to avoid breaking changes with `module_variable_optional_attrs`
 
