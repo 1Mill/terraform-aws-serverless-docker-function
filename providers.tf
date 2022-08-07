@@ -23,5 +23,5 @@ terraform {
 	# ! Terraform v1.3 introduces a breaking change by throwing
 	# ! an error when using experiment "module_variable_optional_attrs"
 	# ! and by removing the "defaults(..., ...)" helper function
-	required_version = "~> 1, < 1.3"
+	required_version = "~> 1.0, < 1.3"
 }
