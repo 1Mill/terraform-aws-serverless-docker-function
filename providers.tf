@@ -4,6 +4,10 @@ terraform {
 	]
 
 	required_providers {
+		aws = {
+			source = "hashicorp/aws"
+			version = "~> 4.0"
+		}
 		docker = {
 			# * v2.18 enables the recommended white-list pattern in .dockerignore
 			source = "kreuzwerker/docker"
