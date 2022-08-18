@@ -22,7 +22,7 @@ provider "docker" {
 
 module "docker_image" {
 	source = "terraform-aws-modules/lambda/aws//modules/docker-build"
-	version = "~> 3.3.1"
+	version = "~> 4.0.0"
 
 	create_ecr_repo = true
 	ecr_repo = local.registry.name
@@ -47,7 +47,7 @@ module "docker_image" {
 
 module "lambda" {
 	source = "terraform-aws-modules/lambda/aws"
-	version = "~> 3.3.1"
+	version = "~> 4.0.0"
 
 	create_package = false
 	environment_variables = var.environment

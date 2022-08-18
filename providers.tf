@@ -4,15 +4,6 @@ terraform {
 	]
 
 	required_providers {
-		aws = {
-			# ! Before v4.22 we could delete any ECR instance, even if if it contained
-			# ! images still. In v4.22 we must now set "force_delete" to "true" to
-			# ! maintain this behavior.
-			# TODO: Make "force_delete" accessible through "terraform-aws-modules/lambda"
-			# TODO: to avoid breaking change when deleting ECR instances that contain images
-			source = "hashicorp/aws"
-			version = "~> 4.0, < 4.22"
-		}
 		docker = {
 			# * v2.18 enables the recommended white-list pattern in .dockerignore
 			source = "kreuzwerker/docker"
