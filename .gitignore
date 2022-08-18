@@ -4,4 +4,3 @@
 # Terraform
 *terraform.tfstate*
 .terraform
-.terraform.lock.hcl
