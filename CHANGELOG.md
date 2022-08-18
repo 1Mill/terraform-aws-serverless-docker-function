@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.0.8
+
+* Re-add `hashicorp/aws ~> 4.0` constraint to avoid accidentally adopting breaking changes from major releases
+
+## v0.0.7
+
+* Upgrade `terraform-aws-modules/lambda/aws ~> 4.0.0` and `terraform-aws-modules/lambda/aws//modules/docker-build ~> 4.0.0` to fix bug with `hashicorp/aws >= 4.22`
+* Remove `hashicorp/aws ~> 4.0, < 4.22` constraint
+
 ## v0.0.6
 
 * Set `hashicorp/aws ~> 4.0, < 4.22` to avoid breaking changes with new `force_delete` argument for `aws_ecr_repository` resources
