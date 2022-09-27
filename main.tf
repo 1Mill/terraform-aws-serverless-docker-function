@@ -1,13 +1,3 @@
-locals {
-	function = defaults(var.function, {
-		memory = 128
-		timeout = 3
-	})
-	registry = defaults(var.registry, {
-		name = local.function.name
-	})
-}
-
 data "aws_caller_identity" "this" {}
 data "aws_ecr_authorization_token" "token" {}
 data "aws_region" "current" {}
@@ -22,15 +12,15 @@ provider "docker" {
 
 module "docker_image" {
 	source = "terraform-aws-modules/lambda/aws//modules/docker-build"
-	version = "~> 4.0.0"
+	version = "~> 4.0.2"
 
 	create_ecr_repo = true
-	ecr_repo = local.registry.name
+	ecr_repo = var.registry.name != null ? var.registry.name : var.function.name
 	ecr_repo_lifecycle_policy = jsonencode({
 		rules = [
 			{
 				action = { type = "expire" }
-				description = "Keep the latest bulid"
+				description = "Keep the latest build"
 				rulePriority = 1
 				selection = {
 					countNumber = 1
@@ -40,22 +30,22 @@ module "docker_image" {
 			}
 		]
 	})
-	image_tag = local.function.version
+	image_tag = var.function.version
 	image_tag_mutability = "IMMUTABLE"
 	source_path = var.docker.build
 }
 
 module "lambda" {
 	source = "terraform-aws-modules/lambda/aws"
-	version = "~> 4.0.0"
+	version = "~> 4.0.2"
 
 	create_package = false
 	environment_variables = var.environment
-	function_name = local.function.name
+	function_name = var.function.name
 	image_uri = module.docker_image.image_uri
-	memory_size = local.function.memory
+	memory_size = var.function.memory
 	package_type = "Image"
-	timeout = local.function.timeout
+	timeout = var.function.timeout
 
 	attach_policy_json = var.policy != null
 	policy_json = var.policy

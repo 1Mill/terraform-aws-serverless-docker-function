@@ -12,9 +12,9 @@ variable "environment" {
 variable "function" {
 	description = "AWS Lambda configuration."
 	type = object({
-		memory = optional(string)
+		memory = optional(string, 128)
 		name = string
-		timeout = optional(string)
+		timeout = optional(string, 3)
 		version = optional(string)
 	})
 }

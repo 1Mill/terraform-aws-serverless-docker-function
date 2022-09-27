@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.0
+
+* **Breaking changes**
+  * Require `terraform ~> 1.3` because experimental `defaults()` method were removed and replaced `optional()` method.
+* Bump `terraform-aws-modules` from `~> 4.0.0` to `~> 4.0.2`
+* Fix spelling of "build"
+
 ## v0.0.8
 
 * Re-add `hashicorp/aws ~> 4.0` constraint to avoid accidentally adopting breaking changes from major releases
