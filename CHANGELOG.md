@@ -6,7 +6,6 @@
   * Upgrade `terraform-aws-modules` from `~> 4.0.2` to `~> 5.3.0` which requires `kreuzwerker/docker ~> 3.0`.
 * Document optional `policy` varaible in `README.md`.
 
-
 ## v1.0.0
 
 * **Breaking changes**
