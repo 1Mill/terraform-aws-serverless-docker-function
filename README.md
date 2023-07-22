@@ -10,6 +10,7 @@
 | function.name    | AWS Lambda function name                                         | string |                  | Yes      |
 | function.timeout | AWS Lambda timeout after seconds                                 | string | `3`              |          |
 | function.version | AWS Lambda docker image version                                  | string | Current Datetime |          |
+| policy           | AWS Policy formatted as JSON                                     | string |                  |          |
 | registry.name    | AWS ECR name                                                     | string | `function.name`  |          |
 
 ## Usage
