@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0
+
+* Validate and expand constraints to perimt both `hashicorp/aws` `~> 4.0` and `~> 5.0`.
+
 ## v2.0.0
 
 * **Breaking changes**
