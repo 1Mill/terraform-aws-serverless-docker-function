@@ -1,7 +1,7 @@
 terraform {
 	required_providers {
 		aws = {
-			source = "hashicorp/aws"
+			source  = "hashicorp/aws"
 			version = "~> 5"
 		}
 	}
@@ -9,9 +9,9 @@ terraform {
 
 data "aws_iam_policy_document" "this" {
 	statement {
-		actions = ["kms:Decrypt"]
+		actions   = ["kms:Decrypt"]
 		resources = ["*"]
-		sid = "MyUniqueDescription"
+		sid       = "MyUniqueDescription"
 	}
 }
 module "serverless-docker-function" {
@@ -19,11 +19,11 @@ module "serverless-docker-function" {
 
 	docker = { build = abspath(path.module) }
 	environment = {
-		MESSAGE = "Hello from the environment!"
+		MESSAGE  = "Hello from the environment!"
 		NODE_ENV = "production"
 	}
 	function = {
-		name = "my-simple-node-lambda"
+		name    = "my-simple-node-lambda"
 		version = "v0.0.1"
 	}
 	policy = data.aws_iam_policy_document.this.json

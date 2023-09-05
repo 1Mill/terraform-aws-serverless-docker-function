@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.0
+
+* **Breaking changes**
+  * Upgrade `terraform-aws-modules/lambda/aws` from `~> 5.3.0` to `~> 6.0.0` ([more details](https://github.com/terraform-aws-modules/terraform-aws-lambda/blob/master/CHANGELOG.md#600-2023-08-09))
+    * This only impacts people using AWS SAM as part of their development process.
+
 ## v2.1.0
 
 * Validate and expand constraints to perimt both `hashicorp/aws` `~> 4.0` and `~> 5.0`.
@@ -7,7 +13,7 @@
 ## v2.0.0
 
 * **Breaking changes**
-  * Upgrade `terraform-aws-modules` from `~> 4.0.2` to `~> 5.3.0` which requires `kreuzwerker/docker ~> 3.0`.
+  * Upgrade `terraform-aws-modules/lambda/aws` from `~> 4.0.2` to `~> 5.3.0` which requires `kreuzwerker/docker ~> 3.0`.
 * Document optional `policy` varaible in `README.md`.
 
 ## v1.0.0
