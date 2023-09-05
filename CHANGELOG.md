@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.1.0
+
+* Ouptut `arn` which is the ARN of the created AWS Lambda function.
+
 ## v3.0.0
 
 * **Breaking changes**
