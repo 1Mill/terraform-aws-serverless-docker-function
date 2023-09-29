@@ -2,16 +2,16 @@
 
 ## Inputs
 
-| Name             | Description                                                      | Type   | Default          | Required |
-|------------------|------------------------------------------------------------------|--------|------------------|----------|
-| docker.build     | Absolute path to Dockerfile                                      | string |                  | Yes      |
-| environment      | Environmental variables                                          | object | `{}`             |          |
-| function.memory  | Memory allocated to AWS Lambda function between 128 to 10,240 MB | string | `128`            |          |
-| function.name    | AWS Lambda function name                                         | string |                  | Yes      |
-| function.timeout | AWS Lambda timeout after seconds                                 | string | `3`              |          |
-| function.version | AWS Lambda docker image version                                  | string | Current Datetime |          |
-| policy           | AWS Policy formatted as JSON                                     | string |                  |          |
-| registry.name    | AWS ECR name                                                     | string | `function.name`  |          |
+| Name             | Required | Type         | Default          | Description                                                      |
+|------------------|----------|--------------|------------------|------------------------------------------------------------------|
+| docker.build     | Yes      | string       |                  | Absolute path to Dockerfile                                      |
+| environment      |          | object       | `{}`             | Environmental variables                                          |
+| function.memory  |          | string       | `128`            | Memory allocated to AWS Lambda function between 128 to 10,240 MB |
+| function.name    | Yes      | string       |                  | AWS Lambda function name                                         |
+| function.timeout |          | string       | `3`              | AWS Lambda timeout after seconds                                 |
+| function.version |          | string       | Current Datetime | AWS Lambda docker image version                                  |
+| policies         |          | list(string) | `[]`             | List of AWS Policies formatted as JSON                           |
+| registry.name    |          | string       | `function.name`  | AWS ECR name                                                     |
 
 ## Usage
 

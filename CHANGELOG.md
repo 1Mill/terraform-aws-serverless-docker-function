@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.2.0
+
+* Add optional `policies` input to accept a list of AWS policies as JSON.
+* Depricate `policy` input which will be droped on next major release in favor of new `policies`.
+
 ## v3.1.0
 
 * Ouptut `arn` which is the ARN of the created AWS Lambda function.

@@ -37,6 +37,10 @@ module "docker_image" {
 	})
 }
 
+locals {
+	policies = compact(concat([var.policy], var.policies))
+}
+
 module "lambda" {
 	source  = "terraform-aws-modules/lambda/aws"
 	version = "~> 6.0.0"
@@ -49,6 +53,7 @@ module "lambda" {
 	package_type          = "Image"
 	timeout               = var.function.timeout
 
-	attach_policy_json = var.policy != null
-	policy_json        = var.policy
+	attach_policy_jsons    = length(local.policies) >= 1
+	number_of_policy_jsons = length(local.policies)
+	policy_jsons           = local.policies
 }
