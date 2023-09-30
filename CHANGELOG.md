@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.3.0
+
+* Add optional `registry.keep_count` input to customize how many images are keep in the ECR.
+* Set `keep_remotely` to `true` so that remote images are not deleted when a new image is published: leaving that responsibilty to the ECR Lifecycle policy.
+
 ## v3.2.0
 
 * Add optional `policies` input to accept a list of AWS policies as JSON.

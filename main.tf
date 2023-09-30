@@ -18,17 +18,18 @@ module "docker_image" {
 	ecr_repo             = var.registry.name != null ? var.registry.name : var.function.name
 	image_tag            = var.function.version
 	image_tag_mutability = "IMMUTABLE"
+	keep_remotely        = true
 	source_path          = var.docker.build
 
 	ecr_repo_lifecycle_policy = jsonencode({
 		rules = [
 			{
 				action       = { type = "expire" }
-				description  = "Keep the latest build"
+				description  = "Keep only the ${var.registry.keep_count} newest builds"
 				rulePriority = 1
 
 				selection = {
-					countNumber = 1
+					countNumber = var.registry.keep_count
 					countType   = "imageCountMoreThan"
 					tagStatus   = "any"
 				}

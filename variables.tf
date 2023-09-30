@@ -39,6 +39,12 @@ variable "registry" {
 	description = "AWS ECR configuration."
 	default = {}
 	type = object({
+		keep_count = optional(number, 2)
 		name = optional(string)
 	})
+
+	validation {
+		condition     = var.registry.keep_count >= 1
+		error_message = "The registry.keep_count must be a positive integer."
+	}
 }

@@ -29,14 +29,15 @@ data "aws_iam_policy_document" "kms" {
 module "serverless-docker-function" {
 	source  = "../.."
 
-	docker = { build = abspath(path.module) }
+	docker = {
+		build = abspath(path.module)
+	}
 	environment = {
 		MESSAGE  = "Hello from the environment!"
 		NODE_ENV = "production"
 	}
 	function = {
-		name    = "my-simple-node-lambda"
-		version = "v0.0.1"
+		name = "my-simple-node-lambda"
 	}
 	policies = [
 		data.aws_iam_policy_document.eventbridge.json,
